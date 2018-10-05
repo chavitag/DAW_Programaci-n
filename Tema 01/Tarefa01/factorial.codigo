@@ -1,0 +1,11 @@
+Visualizar "Introduce un número: "
+Pedir num
+r=1
+Visualizar "Calculando " num "!"
+
+Mientras num > 0 
+ r = r * num
+ num = num - 1
+Fin-Mientras
+Visualizar "El factorial es " r
+
