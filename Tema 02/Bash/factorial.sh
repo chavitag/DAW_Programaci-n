@@ -20,10 +20,12 @@
 echo "Introduce un número: "
 read num
 r=1
-echo "Calculando " $num"!"
+echo "Calculando $num! ..."
 
-while [[ $num > 0 ]]; do
- r=$(($r*$num))
- num=$(($num-1))
+while [ $num -gt 0 ]; do
+# let r=r*num
+ r=$((r*num))
+# let num=num-1
+ num=$((num-1))
 done
-echo "El factorial es " $r
+echo "O factorial é $r"
