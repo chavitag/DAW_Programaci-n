@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exemplo de Entrada/Saida  JavaScript</title>
+		<!-- Programa en Javascript-->
+		<script type="text/javascript">
+			function saudo() {
+				var elemento_nome=document.getElementById("nome");
+				var elemento_output=document.getElementById("output");
+				var nome=elemento_nome.value;
+				elemento_output.innerHTML="Hola, "+nome;
+			}
+		</script>
+	</head>
+	<body>
+		<div>Introduce o teu nome <input type="text" value="" id="nome"/><input type="button" onclick="saudo()" value="Xa!"/></div>
+		<div id="output"></div>
+	</body>
+</html>

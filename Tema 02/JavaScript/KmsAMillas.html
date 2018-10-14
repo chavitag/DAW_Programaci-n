@@ -1,0 +1,29 @@
+<!-- 		 
+			Escribir un algoritmo que pida un número de Kms e nos visualice o seu valor en millas 
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exemplo de Entrada/Saida  JavaScript</title>
+		<!-- Programa en Javascript-->
+		<script type="text/javascript">
+			//  Escribir un algoritmo que pida un número de Kms e nos visualice o seu valor en millas
+			//
+			// Recuperar numero introducido
+			//	Millas = Kms/1.60934
+			//	Visualizar Millas
+			//
+			function convertir() {
+				var elemento_numero=document.getElementById("numero");
+				var elemento_output=document.getElementById("output");
+				var millas=elemento_numero.value/1.60934;
+				elemento_output.innerHTML=elemento_numero.value+" Kms son "+millas+" Millas";
+			}
+		</script>
+	</head>
+	<body>
+		<div>Introduce os Kms <input type="text" value="" id="numero"/><input type="button" onclick="convertir()" value="Convirte!"/></div>
+		<div id="output"></div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- 		 
+			Indica si un número é par ou impar  
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exemplo de Entrada/Saida  JavaScript</title>
+		<!-- Programa en Javascript-->
+		<script type="text/javascript">
+			// Indica si un número é par ou impar
+			//
+			// Recuperar numero introducido
+			//	Si (o resto de dividir o número entre dous é igual a 0) entón 
+			//		visualizar "O Número " numero "é Par"
+			//	Se non 
+			//		visualizar "O Número " numero "é IMPAR"
+			//	Fin-Si
+			function verPar() {
+				var elemento_numero=document.getElementById("numero");
+				var elemento_output=document.getElementById("output");
+				var n=elemento_numero.value;
+				if (n%2 == 0) {
+					elemento_output.innerHTML="O número e Par";
+				} else {
+					elemento_output.innerHTML="O número e Impar";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div>Introduce un numero <input type="text" value="" id="numero"/><input type="button" onclick="verPar()" value="Comproba!"/></div>
+		<div id="output"></div>
+	</body>
+</html>
