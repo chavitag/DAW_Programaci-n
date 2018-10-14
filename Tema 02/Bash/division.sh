@@ -68,6 +68,7 @@ else
 	  divisor=$((divisor*-1))
 	fi
    cociente=0
+## [ $dividendo -ge $divisor ], o divido para amosar o operador lóxico || (ou)
 	while [ $dividendo -gt $divisor ] || [ $dividendo -eq $divisor ]; do
 		dividendo=$((dividendo-divisor))
 		cociente=$((cociente+1))
