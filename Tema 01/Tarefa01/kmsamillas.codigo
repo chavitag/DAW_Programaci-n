@@ -1,0 +1,6 @@
+# Escribir un algoritmo que pida un número de Kms e nos visualice o seu valor en millas
+#
+
+  Pedir Kms
+  Millas = Kms/1.60934
+  Visualizar Millas
