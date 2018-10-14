@@ -5,6 +5,7 @@
 #
 #  Pedir Kms
 #  Millas = Kms/1.60934
+#  Visualizar Millas
 
 echo "Introduce un número: "
 read kilometros
