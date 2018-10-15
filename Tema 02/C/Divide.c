@@ -1,4 +1,14 @@
 /*
+Para instalar o compilador de C: 
+	apt-get install gcc
+
+Para compilar o código:
+	gcc Divide.c -o Divide
+
+Para executar:
+	./Divide
+
+
 ## División mediante Restas
 ##
 ## 	Supoñemos que o resultado é positivo

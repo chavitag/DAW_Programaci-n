@@ -1,4 +1,14 @@
-/* Escribir un algoritmo que pida un número de Kms e nos visualice o seu valor en millas
+/* 
+Para instalar o compilador de C: 
+	apt-get install gcc
+
+Para compilar o código:
+	gcc KmsAMillas.c -o KmsAMillas
+
+Para executar:
+	./KmsAMillas
+
+	Escribir un algoritmo que pida un número de Kms e nos visualice o seu valor en millas
 
   Pedir Kms
   Millas = Kms/1.60934

@@ -1,4 +1,15 @@
-/* Indica si un número é par ou impar
+/*
+Para instalar o compilador de C: 
+	apt-get install gcc
+
+Para compilar o código:
+	gcc ParImpar.c -o ParImpar
+
+Para executar:
+	./ParImpar
+
+
+	Indica si un número é par ou impar
 
 	Pedir numero
 	Si (o resto de dividir o número entre dous é igual a 0) entón 
