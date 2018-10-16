@@ -1,0 +1,48 @@
+Traza de División Mediante Restas
+
+dividendo -4  Divisor -3
+
+dividendo	divisor	signo		divisor == 0? 		divisor < 0? 	dividendo < 0?		dividendo >= divisor ?				cociente		Saída Pantalla
+-----------------------------------------------------------------------------------------------------------------------------------------
+-4				-3			1			NON					SI
+				3			-1														SI
+4							1																				SI											0
+1																											NON										1
+1																																						1				O resultado é cociente 1 resto 1
+
+
+dividendo -5  divisor 3
+
+dividendo	divisor	signo		divisor == 0? 		divisor < 0? 	dividendo < 0?		dividendo >= divisor ?		cociente		Saída Pantalla
+-----------------------------------------------------------------------------------------------------------------------------------------
+-5				3			1			NON					NON				SI
+5							-1																				SI									0
+2																											NON								1
+-2																																				-1				O resultado é cociente -1 resto -2
+
+
+dividendo 0 divisor 7
+
+dividendo	divisor	signo		divisor == 0? 		divisor < 0? 	dividendo < 0?		dividendo >= divisor ?		cociente		Saída Pantalla
+-----------------------------------------------------------------------------------------------------------------------------------------
+0				7			1			NON					NON				NON					NON								0				O resultado é cociente 0 resto 0
+
+
+
+dividendo 8 divisor 0
+
+dividendo	divisor	signo		divisor == 0? 		divisor < 0? 	dividendo < 0?		dividendo >= divisor ?      cociente		Saída Pantalla
+-----------------------------------------------------------------------------------------------------------------------------------------
+8				0			1			SI																															Non se pode realizar unha división entre 0
+
+
+dividendo 5 divisor 2
+
+dividendo	divisor	signo		divisor == 0? 		divisor < 0? 	dividendo < 0?		dividendo >= divisor ?			cociente		Saída Pantalla
+-----------------------------------------------------------------------------------------------------------------------------------------
+5				2			1			NON					NON				NON					SI										0
+3																											SI										1
+1																											NON									2
+1																																					2				O resultado é cociente 2 resto 1
+
+

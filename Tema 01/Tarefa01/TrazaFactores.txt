@@ -1,0 +1,41 @@
+Traza Factores Primos
+
+numero = 14
+numero		primo			numero>1?		numero % primo == 0?			saida en pantalla
+------------------------------------------------------------------------------------
+14				2				SI					SI									1
+7								SI					NON								2
+				3				SI					NON
+				4				SI					NON
+				5				SI					NON
+				6				SI					NON
+				7				SI					SI									7
+1								NON
+
+
+
+numero =27
+numero		primo			numero>1?		numero % primo == 0?			saida en pantalla
+------------------------------------------------------------------------------------
+27				2				SI					NON								1
+9				3				SI					SI									3
+3								SI					SI									3
+1								SI					SI									3
+								NON
+
+numero=1
+numero		primo			numero>1?		numero % primo == 0?			saida en pantalla
+------------------------------------------------------------------------------------
+1				2				NON													1
+
+
+
+numero=0
+
+/// ERROR: O PROGRAMA FALLA. 0 non se pode descompoñer en factores primos
+
+numero		primo			numero>1?		numero % primo == 0?			saida en pantalla
+------------------------------------------------------------------------------------
+0				2				NON													1
+
+

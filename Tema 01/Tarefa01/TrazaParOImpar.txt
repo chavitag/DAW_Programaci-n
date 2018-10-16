@@ -1,0 +1,18 @@
+Traza do Algoritmo
+
+	Entrada 7
+
+	numero		resto de dividir entre 2 e 0?			Saida Pantalla
+		7							NON								O Número 7 é IMPAR
+
+
+	Entrada 4
+
+	numero		resto de dividir entre 2 e 0?			Saida Pantalla
+		4							SI									O Número 4 é PAR
+
+
+	Entrada 0
+
+	numero		resto de dividir entre 2 é 0?			Saída Pantalla
+		0							SI									O Número 0 é PAR
