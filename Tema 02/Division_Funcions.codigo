@@ -1,0 +1,51 @@
+##
+## Función que Realiza a División mediante Restas
+#	Recibe
+#			dividendo: entrada - dividendo
+#			divisor: entrada - divisor
+#			cociente: saída - devolverá o resultado da división
+#			resto: saída - devolverá o resto da división
+#
+function divide(dividendo,divisor,&cociente,&resto) {
+	resultado=correcto;
+	signo=positivo;
+
+	Si o dividendo é negativo 
+		signo=negativo;
+		invertir signo do dividendo;
+	FinSi
+
+	Si o divisior é 0
+		resultado=erroneo
+	Se Non
+		Si o divisior é negativo
+			invertir signo
+			invertir signo do divisor
+		FinSi
+   	cociente=0;
+		Mentras o dividendo >= $divisor 
+			dividendo=dividendo-$divisor;
+			incrementamos en 1 o valor de cociente
+		FinMentras
+		o signo do dividendo debe ser o indicado por signo.
+		o signo do cociente debe ser o indicado por signo
+		resto=dividendo  (para devolver o valor no parámetro de saída)
+	FinSI
+	Devolvemos resultado
+}
+
+##		Programa que calcula a división enteira de dous números
+## 
+##
+Visualizar "Dividendo?: ";
+Pedir dividendo
+
+Visualizar "Divisor?: ";
+Pedir divisor
+
+Si (divide(dividendo,divisor,cociente,resto) == erroneo)
+	Visualizar "Non se pode dividir entre 0";
+SeNon
+	Visualizar "O resultado é Cociente: " cociente " e Resto: "resto
+FinSi
+
