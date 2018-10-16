@@ -41,9 +41,9 @@
 				var elemento_dividendo=document.getElementById("n1");
 				var elemento_divisor=document.getElementById("n2");
 				var elemento_output=document.getElementById("output");
-				
-				var dividendo=elemento_dividendo.value;
-				var divisor=elemento_divisor.value;
+				// Si non convertimos o TEXTO que introducimos co teclado a número, non funcionan ben as comparacións....
+				var dividendo=parseInt(elemento_dividendo.value);
+				var divisor=parseInt(elemento_divisor.value);
 				if (divisor == 0) {
 					elemento_output.innerHTML="Non se pode dividir entre 0";
 				} else {
