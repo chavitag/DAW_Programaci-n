@@ -12,7 +12,7 @@
 #		visualizar "O Número " numero "é IMPAR"
 #	Fin-Si
 
-num=input("Introduce un número: ")
+num=int(input("Introduce un número: "))
 if ( num % 2 == 0):
 	print("O Número "+str(num)+" é PAR")
 else:

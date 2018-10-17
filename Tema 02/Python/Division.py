@@ -47,14 +47,14 @@
 #	Fin-Si
 
 signo=1;
-dividendo=input("Dividendo?: ")
+dividendo=int(input("Dividendo?: "))
 
 # Si o dividendo é negativo, o resultado é negativo, e facemos os cálculos coma si fora positivo
 if ( dividendo < 0 ):
 	signo=-1
 	dividendo=dividendo*-1
 
-divisor=input("Divisor?: ")
+divisor=int(input("Divisor?: "))
 
 if ( divisor == 0 ):
 	print("Non se pode realizar unha división entre 0")
