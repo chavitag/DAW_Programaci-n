@@ -1,0 +1,15 @@
+#	Escribir un algoritmo que visualice na pantalla o número de términos da serie de Fibonacci que indique o usuario.
+#	A serie de Fibonacci ten a seguinte forma:
+#	1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+
+Visualizar "Cantos termos queres ver?:"
+Ler N
+t1 = 1
+t2 = 1
+Mentras N > 0
+	Visualizar t1
+	s=t1+t2
+	t1=t2
+	t2=s
+	N=N-1
+FinMentras
