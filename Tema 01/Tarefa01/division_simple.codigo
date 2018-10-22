@@ -1,0 +1,19 @@
+# División mediante Restas - Versión simplificada sin ter en conta o signo, so positivos
+#
+
+	Visualizar "Dividendo? (introduce un número >= 0): "
+	Pedir dividendo
+
+	Visualizar "Divisor? (introduce un número > 0): "
+	Pedir divisor
+
+	Si (divisor == 0)
+		Visualizar "Non se pode realizar unha división entre 0"
+	Si-Non
+		cociente = 0
+		Mientras dividendo >= divisor
+			dividendo = dividendo - divisor
+			cociente = cociente + 1
+		Fin-Mentras
+		Visualizar "O resultado é Cociente: " cociente " e Resto: " dividendo
+	Fin-Si
