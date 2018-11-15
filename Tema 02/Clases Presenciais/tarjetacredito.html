@@ -13,6 +13,7 @@
 			}
 
 			function duplicarImpares(t) {
+				// Saltamos el primer número, que es el dígito de control
 				var idx=1;
 				while(idx<t.length) {
 					t[idx]=2*t[idx];
@@ -20,6 +21,24 @@
 					t[idx]=(Math.trunc(t[idx]/10))+(t[idx]%10);
 					idx=idx+2;
 				}
+			}
+
+			function averiguaEntidad(numero,lon) {
+				var tarjeta="erronea"
+				if (lon==15) {
+					// American express
+					// 	Cogemos los 2 primeros digitos
+					var digitos=Math.trunc(numero/Math.pow(10,(lon-2)));
+					if ((digitos==34)||(digitos==37)) tarjeta="americanexpress";
+				} else {
+					var digitos=Math.trunc(numero/Math.pow(10,lon-1));
+					if (digitos==4) tarjeta="visa";
+					else {
+						digitos=Math.trunc(numero/Math.pow(10,(lon-2)));
+						if ((digitos>=51)&&(digitos<=55)) tarjeta="mastercard";
+					}
+				}
+				return tarjeta;
 			}
 
 			function verificaTarjeta() {
@@ -30,18 +49,22 @@
 				if ((longitud==16)||(longitud==15)) {
 					duplicarImpares(tabla);
 					//
-					// Calcular el total de la suma de los numeros de la tabla
+					// Calcular el total de la suma de los numeros de la tabla. Saltamos el dígito de control
 					//
-					var idx=0;
+					var idx=1;
 					var total=0
 					while(idx<tabla.length) {
 						total=total+tabla[idx];
 						idx=idx+1
 					}
 					control=10-(total%10)
-					if (tabla[0]==control) correcta=true;	
-					alert(correcta);
+					if (tabla[0]==control) {
+						var entidad=averiguaEntidad(numero,tabla.length);
+						if ((entidad=="americanexpress")||(entidad="mastercard")||(entidad="visa")) correcta=true;
+					}
 				}
+				if (correcta) document.getElementById("output").innerHTML="La tarjeta "+entidad+" es correcta";
+				else				document.getElementById("output").innerHTML="La tarjeta es INcorrecta";
 			}
 		</script>
 	</head>

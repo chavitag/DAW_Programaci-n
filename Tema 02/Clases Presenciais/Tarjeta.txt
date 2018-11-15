@@ -4,17 +4,15 @@ Divido el número en dígitos y lo guardo en la tabla t[]
 // La AmericanExpress tiene 15 dígitos
 //
 Si la longitud del número es 15 o 16
-	Duplico los dígitos de las posiciones impares empezando por la derecha, y reduzco el resultado
+	Duplico los dígitos de las posiciones impares empezando por la derecha (para saltar el digito de control), y reduzco el resultado
 	Sumo todos los dígitos para calcular el total
 	Cojo el dígito de las unidades del total y digito de control == 10 - digito de las unidades
-	Si el digito de control == ultimo digito del numero correcta=SI
-Fin Si
-
-Si la tarjeta es correcta 
-	averiguo la entidad
-	Si la entidad no es visa, mastercard o americanexpress la tarjeta es incorrecta
+	Si el digito de control == ultimo digito del numero
+		averiguo la entidad
+		Si la entidad es visa, mastercard o americanexpress correcta=SI
+	Fin Si
 FinSi
-Si la tarjeta es correcta
+Si la tarjeta es correcta 
 	visualizo "Tarjeta " entidad " correcta"
 Si No
 	Visualizo "Tarjeta incorrecta"
@@ -29,11 +27,11 @@ Si la longitud de t es 15 o 16
 	duplicarImpares(t)
 	total=calculaTotal(t)
 	control=digitoControl(t)
-	Si control==ultimo digito de t correcta=SI
-Fin-Si
-Si la tarjeta es correcta 
-	entidad=averiguaEntidad(t);
-	Si la entidad no es visa, mastercard o american express la tarjeta es incorrecta
+	Si control==ultimo digito de t 
+	Si la tarjeta es correcta 
+		entidad=averiguaEntidad(t);
+		Si la entidad es visa, mastercard o american express correcta=SI
+	FinSi
 FinSi
 Si la tarjeta es correcta
 	visualizo "Tarjeta " entidad " correcta"
@@ -43,7 +41,7 @@ FinSi
 
 --------------------------------------------------------------------------------------------
 // Entrada: numero
-// Entrada/Salida: t (tabla con los dígitos)
+// Entrada/Salida: t (tabla con los dígitos, el número queda invertido)
 // Devuelve Nº de digitos
 funcion divideNumero(numero,t[])
 	idx=0
@@ -100,24 +98,25 @@ Visualiza "Introduce nº de tarjeta: "
 Lee numero
 longitud=divideNumero(numero,tabla);
 Si longitud == 16 o longitud==15
-	t=duplicarImpares(t,longitud);
+	// El dígito de control no se tiene en cuenta
 	//
-	// Calcular el total de la suma de los numeros de la tabla
+	t=duplicarImpares(t,longitud-1);
 	//
-	idx=0;
+	// Calcular el total de la suma de los numeros de la tabla saltando el dígito de control
+	//
+	idx=1;
 	total=0
-	Mientras idx<longitud
+	Mientras idx<longitud-1
 		total=total+t[idx];
 		idx=idx+1
 	FinMientras
 	control=10-(total%10)
-	Si (t[0]==control) correcta=SI	
-Fin-Si
-Si la tarjeta es correcta 
-	entidad=averiguaEntidad(t);
-	Si (entidad!="visa" y entidad!="mastercard" y entidad!="americanexpress") la tarjeta es incorrecta
+	Si (t[0]==control) 
+		entidad=averiguaEntidad(t);
+		Si (entidad=="visa" o entidad=="mastercard" o entidad=="americanexpress") correcta=SI
+	FinSi
 FinSi
-Si la tarjeta es correcta
+Si correcta==SI
 	visualizo "Tarjeta " entidad " correcta"
 Si No
 	Visualizo "Tarjeta incorrecta"
