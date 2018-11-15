@@ -1,0 +1,129 @@
+correcta=NO
+Pedir numero
+Divido el número en dígitos y lo guardo en la tabla t[]
+// La AmericanExpress tiene 15 dígitos
+//
+Si la longitud del número es 15 o 16
+	Duplico los dígitos de las posiciones impares empezando por la derecha, y reduzco el resultado
+	Sumo todos los dígitos para calcular el total
+	Cojo el dígito de las unidades del total y digito de control == 10 - digito de las unidades
+	Si el digito de control == ultimo digito del numero correcta=SI
+Fin Si
+
+Si la tarjeta es correcta 
+	averiguo la entidad
+	Si la entidad no es visa, mastercard o americanexpress la tarjeta es incorrecta
+FinSi
+Si la tarjeta es correcta
+	visualizo "Tarjeta " entidad " correcta"
+Si No
+	Visualizo "Tarjeta incorrecta"
+FinSi
+
+----------------------------------------------------------------------------------------------
+correcta=NO
+Visualiza "Introduce nº de tarjeta: "
+Lee numero
+longitud=divideNumero(numero,t[])
+Si la longitud de t es 15 o 16
+	duplicarImpares(t)
+	total=calculaTotal(t)
+	control=digitoControl(t)
+	Si control==ultimo digito de t correcta=SI
+Fin-Si
+Si la tarjeta es correcta 
+	entidad=averiguaEntidad(t);
+	Si la entidad no es visa, mastercard o american express la tarjeta es incorrecta
+FinSi
+Si la tarjeta es correcta
+	visualizo "Tarjeta " entidad " correcta"
+Si No
+	Visualizo "Tarjeta incorrecta"
+FinSi
+
+--------------------------------------------------------------------------------------------
+// Entrada: numero
+// Entrada/Salida: t (tabla con los dígitos)
+// Devuelve Nº de digitos
+funcion divideNumero(numero,t[])
+	idx=0
+	Mientras numero>0
+		t[idx]=numero%10
+		numero=numero/10
+		idx++
+	FinMientras
+	return idx
+fin-funcion
+
+
+//Entrada t: tabla con los dígitos
+//	  longitud: longitud de la tabla, puede ser 15 o 16
+//Devuelve t: tabla con los dígitos impares duplicados y los resultados reducidos
+funcion duplicarImpares(t,longitud) {
+	idx=1;
+	Mientras(idx<longitud) {
+		t[idx]=2*t[idx];
+		// Reducción: Primer dígito+Segundo dígito
+		t[idx]=(t[idx]/10)+(t[idx]%10)
+		idx=idx+2
+	}
+	return t
+}
+
+funcion averiguaEntidad(numero,longitud) {
+	tarjeta="erronea"
+	Si longitud==15
+		// American express
+		// 	Cogemos los 2 primeros digitos
+		digitos=numero/10^(longitud-2)
+		Si digitos==34 o digitos==37  tarjeta="americanexpress"
+	Si no
+		// Visa
+		//	Cogemos 1 digito		
+		digito=numero/10^(longitud-1)
+		Si digito==4 tarjeta="visa"
+		Si no
+			// MasterCard
+			//	Cogemos los 2 primeros digitos
+			digitos=numero/10^(longitud-2)
+			Si digitos>=51 y digitos<=55  
+				tarjeta="mastercard"
+			FinSi
+		FinSi
+		
+	FinSi
+	devolver tarjeta	
+}
+
+correcta=NO
+Visualiza "Introduce nº de tarjeta: "
+Lee numero
+longitud=divideNumero(numero,tabla);
+Si longitud == 16 o longitud==15
+	t=duplicarImpares(t,longitud);
+	//
+	// Calcular el total de la suma de los numeros de la tabla
+	//
+	idx=0;
+	total=0
+	Mientras idx<longitud
+		total=total+t[idx];
+		idx=idx+1
+	FinMientras
+	control=10-(total%10)
+	Si (t[0]==control) correcta=SI	
+Fin-Si
+Si la tarjeta es correcta 
+	entidad=averiguaEntidad(t);
+	Si (entidad!="visa" y entidad!="mastercard" y entidad!="americanexpress") la tarjeta es incorrecta
+FinSi
+Si la tarjeta es correcta
+	visualizo "Tarjeta " entidad " correcta"
+Si No
+	Visualizo "Tarjeta incorrecta"
+FinSi	
+	
+
+
+
+
