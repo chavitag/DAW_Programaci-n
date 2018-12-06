@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercicios en JavaScript</title>
+
+		<script type="text/javascript">
+				// Factores
+				function factores() {
+					var numero=document.getElementById("n1").value;
+					var out="1"; 
+
+					var primo=2;
+					while (numero>1) {
+						if (numero % primo == 0) {
+							out=out+" "+primo;
+							numero = numero / primo;
+						} else {
+							primo = primo + 1;
+						}
+					}
+					document.getElementById("output").innerHTML=out;
+				}
+
+				// Potencias
+				//
+				function eleva() {
+					var base=document.getElementById("n1").value;
+					var exp=document.getElementById("n2").value;
+					var out="O resultado de "+base+ " elevado a "+exp+" é: ";
+					var resultado=1;
+
+					if (exp < 0) {
+						out=out+"1/";
+						exp=-exp;
+					}
+					while (exp > 0) {
+						resultado = resultado * base;
+						exp=exp-1;
+					}
+					out=out+resultado;
+					document.getElementById("output").innerHTML=out;
+				}
+
+				// Factorial
+				//
+				function factorial() {
+					var num=document.getElementById("n1").value;
+					var out;
+					var r=1;
+
+					if (num >= 0) {
+						out="Calculando... "+num+"!=";
+						while (num > 0 ) {
+							r = r * num;
+							num = num - 1;
+						}
+						out=out+r;
+					} else {
+						out="Non se poden calcular factoriais de números negativos";
+					}
+					document.getElementById("output").innerHTML=out;
+				}
+
+				function fibonacci() {
+					var N=document.getElementById("n1").value;
+					var out="";
+
+					t1 = 1;
+					t2 = 1;
+					while (N > 0) {
+						out=out+t1+" ";
+						s=t1+t2;
+						t1=t2;
+						t2=s;
+						N=N-1;
+					}
+					document.getElementById("output").innerHTML=out;
+				}
+		</script>
+	</head>
+	<body>
+		<div>Introduce Numero N1: <input type="text" value="" id="n1"/> </div>
+		<div>Introduce Numero N2: <input type="text" value="" id="n2"/> </div>
+	   <input type="button" onclick="factores()" value="Factores Primos de N1"/></div>
+ 		<input type="button" onclick="eleva()" value="Calcular N1^N2 "/></div>
+ 		<input type="button" onclick="factorial()" value="Factorial de N1 "/></div>
+		<input type="button" onclick="fibonacci()" value="N1 números de Fibonacci"/></div>
+		<div id="output"></div>
+	</body>
+</html>
